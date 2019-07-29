@@ -1,0 +1,93 @@
+/*=================== custom button rule start ====================*/
+.button{
+  font-family: $title-font;
+  display: inline-block;
+  //border: 1px solid transparent;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 12px 54px;
+  border-radius: 4px;
+  // letter-spacing: 1px;
+  color: $title-color;
+  // color: $white;
+  border: 1px solid $primary-color;
+  text-transform: uppercase;
+  @include transition;
+
+  @media(max-width: 767px){
+    font-size: 13px;
+    padding: 9px 24px;
+  }
+
+  &:hover{
+    background: $primary-color;
+    color: $white;
+  }
+
+  &.btn-large{
+    font-size: 2.4rem;
+    padding: 30px 54px;
+    width: 100%;
+    border-radius: 15px;
+    //cursor: pointer;
+  }
+
+  &-tab {
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+    &.active{
+      background: $primary-color;
+      color : $white!important;
+    }
+    &:hover {
+      color: $white!important;
+    }
+  }
+
+  &-link{
+    letter-spacing: 0;
+    color: #3b1d82;
+    border: 0;
+    padding: 0;
+
+    &:hover{
+      background: transparent;
+      color: #3b1d82;
+    }
+  }
+
+  &-header{
+    background: $primary-color2;
+    color: $white;
+    border-color: $primary-color2;
+
+    &:hover{
+      background: #b8024c;
+      color: $white;
+    }
+  }
+
+  &-contactForm{
+
+    background: $primary-color;
+    color: $white;
+    border-color: $primary-color;
+
+    &:hover{
+      border-color: $primary-color2;
+      background: #b8024c;
+      color: $white;
+    }
+  }
+}
+
+#slide_maps{
+  &.col-lg-6:first-child,.col-sm-6:first-child{
+    padding: 0 0 0 15px!important;
+  }
+  &.col-lg-6:last-child,.col-sm-6:last-child{
+    padding: 0 15px 0 0!important;
+  }
+}
+
+/*=================== custom button rule end ====================*/

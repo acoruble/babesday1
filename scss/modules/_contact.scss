@@ -1,0 +1,161 @@
+/*=================== contact banner start ====================*/
+
+.contact-info{
+  margin-bottom: 12px;
+
+  &__icon{
+    margin-right: 20px;
+
+    i,span{
+      color: #8f9195;
+      font-size: 27px;
+    }
+  }
+
+  .media-body{
+
+    h3{
+      font-size: 16px;
+      margin-bottom: 0;
+
+      a{
+        color: $title-color;
+      }
+    }
+
+    p{
+      color: #999999;
+    }
+  }
+}
+
+//alert
+.alert {
+  position: absolute;
+  min-width: 150px;
+  padding: 15px;
+  z-index: 5000;
+  border: 1px solid transparent;
+  @extend .shadow-1;
+  &:hover{
+    @extend .shadow-2;
+  }
+  &-success{
+    background-color: $primary-color;
+    margin-bottom: 0;
+    z-index: 500;
+    width: 100%;
+    border-radius: 0;
+    text-align: center;
+    color:$white;
+  }
+  p{
+    padding: 0;
+    margin: 0;
+  }
+  i{
+    padding-right: 5px;
+    vertical-align: middle;
+    font-size: 32px;
+  }
+  .close-alert{
+    -webkit-appearance: none;
+    position: relative;
+    float: right;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    background: 0 0;
+    font-size: 21px;
+    line-height: 1;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255,255,255,.7);
+    filter: alpha(opacity=40);
+    opacity: .4;
+    &:hover{
+      filter: alpha(opacity=70);
+      opacity: .7;
+    }
+  }
+}
+
+.shadow-1{
+  box-shadow: 0 1px 3px rgba(#000, .12), 0 1px 2px rgba(#000, .24) ;
+}
+.shadow-2{
+  box-shadow: 0 3px 6px rgba(#000, .16), 0 3px 6px rgba(#000, .23) ;
+}
+
+
+/*=================== contact banner end ====================*/
+
+
+/*=================== contact form start ====================*/
+.contact-title{
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.form-contact{
+  width: 100%;
+
+  label{
+    color: $primary-color;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  .form-control{
+    border: 1px solid #f0e9ff;
+    border-radius: 5px;
+    height: 48px;
+    padding-left: 18px;
+    font-size: 1.7rem;
+    background: transparent;
+
+    &:focus{
+      box-shadow: none;
+    }
+
+    &::placeholder{
+      font-weight: 300;
+      color: #999999;
+      font-size: 1.7rem;
+    }
+  }
+
+
+
+  .form-group{
+    margin-bottom: 0!important;
+  }
+
+  textarea{
+    border-radius: 12px;
+    height: 100% !important;
+  }
+
+  // button{
+  //   border: 0;
+  // }
+}
+
+.row{
+  &.newsletter{
+    align-items: flex-end;
+  }
+  .newsletter_form{
+    display: flex;
+    align-items: center;
+  }
+}
+
+.checkbox{
+  label{
+    font-size: 1.6rem;
+    line-height: 3.5rem;
+  }
+}
+
+/*=================== contact form end ====================*/
