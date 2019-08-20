@@ -4,7 +4,7 @@ $email = $_POST["email"];
 $objet = $_POST["objet"];
 $message = $_POST["message"];
 
-$EmailTo = "enguerrand_95@hotmail.fr";
+$EmailTo = "babesdayfr@gmail.com";
 $Subject = $objet;
 
 // prepare email body text
