@@ -11,8 +11,8 @@ class Connexion {
     public static function bdd() {
         $serveur = 'localhost';
         $port = '3306';
-        $utilisateur = 'root';
-        $motdepasse = '';
+        $utilisateur = 'babesday';
+        $motdepasse = 'babesday2019';
         $base = 'babesday';
 
         try {

@@ -512,26 +512,16 @@ h2.contact {
   height: 15%;
 }
 
-#map {
-  background: url("../img/home/maps.jpg") center/cover;
-  border-radius: 5px;
-}
-
-#map_jokers {
-  background: url("../img/home/maps_2.jpg") center/cover;
-  border-radius: 5px;
-}
-
 .header-image {
   position: relative;
-  background: url("../img/banner/babesday_back.png") center/cover no-repeat;
+  background: url("../img/banner/babesday_back.webp") center/cover no-repeat;
   min-height: 764px;
   padding-bottom: 100px;
   overflow: hidden;
 }
 .header-image.banner_evening {
   position: relative;
-  background: url("../img/banner/babesday_back_2.jpg") center/cover no-repeat !important;
+  background: url("../img/banner/babesday_back_2.webp") center/cover no-repeat !important;
   min-height: 764px;
   padding-bottom: 100px;
   overflow: hidden;
@@ -659,7 +649,7 @@ h2.contact {
   height: 150px;
   text-align: center;
   padding-top: 45px;
-  background: url(../img/home/countdown_frame.png) left center no-repeat;
+  background: url(../img/home/countdown_frame.webp) left center no-repeat;
   background-size: cover;
 }
 
@@ -678,7 +668,7 @@ h2.contact {
   margin-right: auto;
   margin-left: auto;
   display: block;
-  background: url(../img/home/feature-icon-bg.png) left center no-repeat;
+  background: url(../img/home/feature-icon-bg.webp) left center no-repeat;
   background-size: cover;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -711,7 +701,7 @@ h2.contact {
   font-weight: 300;
 }
 .card-feature:hover .feature-icon {
-  background: url(../img/home/feature-icon-active-bg.png) left center no-repeat;
+  background: url(../img/home/feature-icon-active-bg.webp) left center no-repeat;
   background-size: cover;
 }
 .card-feature:hover .feature-icon i, .card-feature:hover .feature-icon span {
@@ -1908,11 +1898,11 @@ h3:focus {
   }
 
   .header-image {
-    background: url("../img/banner/visuel_IG_1080x1080px_01.png") center/cover no-repeat;
+    background: url("../img/banner/visuel_IG_1080x1080px_01.webp") center/cover no-repeat;
     min-height: 360px;
   }
   .header-image.banner_evening {
-    background: url("../img/banner/visuel_IG_1080x1080px_02.png") center/cover no-repeat !important;
+    background: url("../img/banner/visuel_IG_1080x1080px_02.webp") center/cover no-repeat !important;
     min-height: 360px;
   }
 
