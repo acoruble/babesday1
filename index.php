@@ -12,12 +12,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/custome-checkbox-css/custom-checkbox-radio.css">
-
     <link rel="stylesheet" href="css/style.css">
     <?php
-    require_once "traitements/Connexion.php";
-    require_once "traitements/SQLInteractions.php";
-    $sql = new SQLInteractions();
+    try
+    {
+      $bdd = new PDO('mysql:host=localhost;dbname=babesday;charset=utf8', 'root', '');
+    }
+    catch (Exception $e)
+    {
+      die('Erreur : ' . $e->getMessage());
+    }
     ?>
 </head>
 <body>
@@ -438,22 +442,20 @@
         <div class="row">
 
             <?php
-            foreach ($sql->overrideSELECT('*','popup_store','1','fetchAll') as $data){
-                //                  print_r($data);
+            foreach ($bdd->query("SELECT * FROM popupstore") as $data){
                 $linkRS = '';
-                if(isset($data['facebook'])){$linkRS .= '<li><a target="_blank" href="'.$data['facebook'].'" aria-label="Facebook de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-facebook fa-2x"></i></a></li>';}
-                if(isset($data['twitter'])){$linkRS .= '<li><a target="_blank" href="'.$data['twitter'].'" aria-label="Twitter de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-twitter fa-2x"></i></a></li>';}
-                if(isset($data['instagram'])){$linkRS .= '<li><a target="_blank" href="'.$data['instagram'].'" aria-label="Instagram de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-instagram fa-2x"></i></a></li>';}
-                if(isset($data['etsy'])){$linkRS .= '<li><a target="_blank" href="'.$data['etsy'].'" aria-label="Etsy de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-etsy fa-2x"></i></a></li>';}
-                if(isset($data['autre'])){$linkRS .= '<li><a target="_blank" href="'.$data['autre'].'" aria-label="Site web de '.$data['nom'].'"><i aria-hidden="true" class="fas fa-globe fa-2x"></i></a></li>';}
+                if(isset($data['facebook'])){$linkRS .= '<li><a target="_blank" href="'.$data['facebook'].'" aria-label="Facebook de '.$data['surname'].'"><i aria-hidden="true" class="fab fa-facebook fa-2x"></i></a></li>';}
+                if(isset($data['twitter'])){$linkRS .= '<li><a target="_blank" href="'.$data['twitter'].'" aria-label="Twitter de '.$data['surname'].'"><i aria-hidden="true" class="fab fa-twitter fa-2x"></i></a></li>';}
+                if(isset($data['instagram'])){$linkRS .= '<li><a target="_blank" href="'.$data['instagram'].'" aria-label="Instagram de '.$data['surname'].'"><i aria-hidden="true" class="fab fa-instagram fa-2x"></i></a></li>';}
+                if(isset($data['etsy'])){$linkRS .= '<li><a target="_blank" href="'.$data['etsy'].'" aria-label="Etsy de '.$data['surname'].'"><i aria-hidden="true" class="fab fa-etsy fa-2x"></i></a></li>';}
+                if(isset($data['autre'])){$linkRS .= '<li><a target="_blank" href="'.$data['autre'].'" aria-label="Site web de '.$data['surname'].'"><i aria-hidden="true" class="fas fa-globe fa-2x"></i></a></li>';}
                 echo '
                                                <div class="col-lg-4 col-sm-6 mb-4">
                                                <div class="card-speaker">
-                                                  <img class="card-img rounded-0" src="https://placekitten.com/400/400" alt="">
-                                                  <img class="card-img rounded-0" src="'.$data['nom'].'" alt="">
+                                                  <img class="card-img rounded-0" src="admin/img/' . $data['image'] . '" alt="">
                                                   <div class="speaker-footer">
-                                                      <h4>'.$data['nom'].'</h4>
-                                                      <p>'.$data['label'].'</p>
+                                                      <h4>'.$data['surname'].'</h4>
+                                                      <p>'.$data['name'].'</p>
                                                   </div>
                                                   <div class="speaker-overlay">
                                                       <ul class="speaker-social">
@@ -484,15 +486,15 @@
         <div class="sponsor-wrapper ">
             <div class="row">
                 <?php
-                foreach ($sql->overrideSELECT('nom,extLink,img_src,class','partenaires','1','fetchAll') as $data){
-                    echo '<div class="col-sm-6 col-lg-4 mb-3">
-                                   <a target="_blank" href="'.$data['extLink'].'">
-                                   <div class="sponsor-single"  aria-label="Logo vers le site de '.$data['nom'].'">
-                                   <img class="img-fluid '.$data['class'].'" src="'.$data['img_src'].'" alt="">
-                                   </div>
-                                   </a>
-                                   </div>';
-                }
+                // foreach ($bdd->overrideSELECT('nom,extLink,img_src,class','partenaires','1','fetchAll') as $data){
+                //     echo '<div class="col-sm-6 col-lg-4 mb-3">
+                //                    <a target="_blank" href="'.$data['extLink'].'">
+                //                    <div class="sponsor-single"  aria-label="Logo vers le site de '.$data['nom'].'">
+                //                    <img class="img-fluid '.$data['class'].'" src="'.$data['img_src'].'" alt="">
+                //                    </div>
+                //                    </a>
+                //                    </div>';
+                // }
                 ?>
 
             </div>
