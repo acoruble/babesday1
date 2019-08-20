@@ -14,11 +14,6 @@
     <link rel="stylesheet" href="vendors/custome-checkbox-css/custom-checkbox-radio.css">
 
     <link rel="stylesheet" href="css/style.css">
-    <?php
-    require_once "traitements/Connexion.php";
-    require_once "traitements/SQLInteractions.php";
-    $sql = new SQLInteractions();
-    ?>
 </head>
 <body>
 
@@ -438,33 +433,33 @@
         <div class="row">
 
             <?php
-            foreach ($sql->overrideSELECT('*','popup_store','1','fetchAll') as $data){
-                //                  print_r($data);
-                $linkRS = '';
-                if(isset($data['facebook'])){$linkRS .= '<li><a target="_blank" href="'.$data['facebook'].'" aria-label="Facebook de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-facebook fa-2x"></i></a></li>';}
-                if(isset($data['twitter'])){$linkRS .= '<li><a target="_blank" href="'.$data['twitter'].'" aria-label="Twitter de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-twitter fa-2x"></i></a></li>';}
-                if(isset($data['instagram'])){$linkRS .= '<li><a target="_blank" href="'.$data['instagram'].'" aria-label="Instagram de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-instagram fa-2x"></i></a></li>';}
-                if(isset($data['etsy'])){$linkRS .= '<li><a target="_blank" href="'.$data['etsy'].'" aria-label="Etsy de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-etsy fa-2x"></i></a></li>';}
-                if(isset($data['autre'])){$linkRS .= '<li><a target="_blank" href="'.$data['autre'].'" aria-label="Site web de '.$data['nom'].'"><i aria-hidden="true" class="fas fa-globe fa-2x"></i></a></li>';}
-                echo '
-                                               <div class="col-lg-4 col-sm-6 mb-4">
-                                               <div class="card-speaker">
-                                                  <img class="card-img rounded-0" src="https://placekitten.com/400/400" alt="">
-                                                  <img class="card-img rounded-0" src="'.$data['nom'].'" alt="">
-                                                  <div class="speaker-footer">
-                                                      <h4>'.$data['nom'].'</h4>
-                                                      <p>'.$data['label'].'</p>
-                                                  </div>
-                                                  <div class="speaker-overlay">
-                                                      <ul class="speaker-social">
-                                                        '.$linkRS.'
-                                                      </ul>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                          ';
-            }
-
+            // foreach ($sql->overrideSELECT('*','popup_store','1','fetchAll') as $data){
+            //     //                  print_r($data);
+            //     $linkRS = '';
+            //     if(isset($data['facebook'])){$linkRS .= '<li><a target="_blank" href="'.$data['facebook'].'" aria-label="Facebook de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-facebook fa-2x"></i></a></li>';}
+            //     if(isset($data['twitter'])){$linkRS .= '<li><a target="_blank" href="'.$data['twitter'].'" aria-label="Twitter de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-twitter fa-2x"></i></a></li>';}
+            //     if(isset($data['instagram'])){$linkRS .= '<li><a target="_blank" href="'.$data['instagram'].'" aria-label="Instagram de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-instagram fa-2x"></i></a></li>';}
+            //     if(isset($data['etsy'])){$linkRS .= '<li><a target="_blank" href="'.$data['etsy'].'" aria-label="Etsy de '.$data['nom'].'"><i aria-hidden="true" class="fab fa-etsy fa-2x"></i></a></li>';}
+            //     if(isset($data['autre'])){$linkRS .= '<li><a target="_blank" href="'.$data['autre'].'" aria-label="Site web de '.$data['nom'].'"><i aria-hidden="true" class="fas fa-globe fa-2x"></i></a></li>';}
+            //     echo '
+            //                                    <div class="col-lg-4 col-sm-6 mb-4">
+            //                                    <div class="card-speaker">
+            //                                       <img class="card-img rounded-0" src="https://placekitten.com/400/400" alt="">
+            //                                       <img class="card-img rounded-0" src="'.$data['nom'].'" alt="">
+            //                                       <div class="speaker-footer">
+            //                                           <h4>'.$data['nom'].'</h4>
+            //                                           <p>'.$data['label'].'</p>
+            //                                       </div>
+            //                                       <div class="speaker-overlay">
+            //                                           <ul class="speaker-social">
+            //                                             '.$linkRS.'
+            //                                           </ul>
+            //                                       </div>
+            //                                   </div>
+            //                               </div>
+            //                               ';
+            // }
+            //
             ?>
 
         </div>
@@ -484,15 +479,15 @@
         <div class="sponsor-wrapper ">
             <div class="row">
                 <?php
-                foreach ($sql->overrideSELECT('nom,extLink,img_src,class','partenaires','1','fetchAll') as $data){
-                    echo '<div class="col-sm-6 col-lg-4 mb-3">
-                                   <a target="_blank" href="'.$data['extLink'].'">
-                                   <div class="sponsor-single"  aria-label="Logo vers le site de '.$data['nom'].'">
-                                   <img class="img-fluid '.$data['class'].'" src="'.$data['img_src'].'" alt="">
-                                   </div>
-                                   </a>
-                                   </div>';
-                }
+                // foreach ($sql->overrideSELECT('nom,extLink,img_src,class','partenaires','1','fetchAll') as $data){
+                //     echo '<div class="col-sm-6 col-lg-4 mb-3">
+                //                    <a target="_blank" href="'.$data['extLink'].'">
+                //                    <div class="sponsor-single"  aria-label="Logo vers le site de '.$data['nom'].'">
+                //                    <img class="img-fluid '.$data['class'].'" src="'.$data['img_src'].'" alt="">
+                //                    </div>
+                //                    </a>
+                //                    </div>';
+                // }
                 ?>
 
             </div>
